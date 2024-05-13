@@ -1,0 +1,1037 @@
+1=write a program to find gcd of two number in python 
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+# Input two numbers
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+
+# Call the gcd function and print the result
+result = gcd(num1, num2)
+print("The GCD of", num1, "and", num2, "is:", result)
+
+2=find a value using linear search program 
+
+
+    Perform linear search to find the index of the target value in the list.
+    
+    Parameters:
+        arr (list): The list to search through.
+        x: The value to search for.
+        
+    Returns:
+        int: The index of the target value if found, otherwise -1.
+    """
+    for i in range(len(arr)):
+        if arr[i] == x:
+            return i
+    return -1
+
+# Example usage:
+arr = [4, 2, 6, 8, 1, 3, 7, 9, 5]
+target = int(input("Enter the value to search for: "))
+
+index = linear_search(arr, target)
+
+if index != -1:
+    print(f"The value {target} is found at index {index}.")
+else:
+    print(f"The value {target} is not present in the list.")
+
+3=write a program to find out square root in python
+
+User
+find the gcd of two numbers in python 
+ChatGPT
+User
+write a program  to find the gcd of two numbers in python 
+
+ChatGPT
+Sure, here's a simple Python program to find the Greatest Common Divisor (GCD) of two numbers using Euclid's algorithm:
+
+python
+Copy code
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+# Input two numbers
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+
+# Call the gcd function and print the result
+result = gcd(num1, num2)
+print("The GCD of", num1, "and", num2, "is:", result)
+This program defines a function gcd that takes two parameters a and b and returns their GCD using Euclid's algorithm. Then, it takes input for two numbers, calls the gcd function with those numbers, and prints the result.
+
+User
+write a program find a value using linear search program 
+ChatGPT
+Certainly! Here's a Python program that performs linear search to find a value in a list:
+
+python
+Copy code
+def linear_search(arr, x):
+    """
+    Perform linear search to find the index of the target value in the list.
+    
+    Parameters:
+        arr (list): The list to search through.
+        x: The value to search for.
+        
+    Returns:
+        int: The index of the target value if found, otherwise -1.
+    """
+    for i in range(len(arr)):
+        if arr[i] == x:
+            return i
+    return -1
+
+# Example usage:
+arr = [4, 2, 6, 8, 1, 3, 7, 9, 5]
+target = int(input("Enter the value to search for: "))
+
+index = linear_search(arr, target)
+
+if index != -1:
+    print(f"The value {target} is found at index {index}.")
+else:
+    print(f"The value {target} is not present in the list.")
+This program defines a function linear_search which takes a list arr and a target value x. It iterates through the list and returns the index of the target value if found, otherwise -1. Then, it takes an input for the value to search for and calls the linear_search function, printing the result accordingly.
+
+User
+write a program to find out square root in python
+ChatGPT
+You can find the square root of a number in Python using the sqrt() function from the math module. Here's a simple program to find the square root of a number:
+
+python
+Copy code
+import math
+
+def find_square_root(num):
+    """
+    Find the square root of a given number.
+    
+    Parameters:  
+        num (float): The number whose square root is to be found.
+        
+    Returns:
+        float: The square root of the given number.
+    """
+    return math.sqrt(num)
+
+# Example usage:
+number = float(input("Enter a number to find its square root: "))
+square_root = find_square_root(number)
+print(f"The square root of {number} is: {square_root}")\
+
+5=write a program to find out largest number in python 
+
+def find_largest_number(numbers):
+    if not numbers:
+        return None  # Return None if the list is empty
+
+    max_number = numbers[0]  # Assume the first number is the largest
+
+    for num in numbers:
+        if num > max_number:
+            max_number = num
+
+    return max_number
+
+# Example usage:
+numbers_list = [10, 5, 20, 15, 8]
+largest_number = find_largest_number(numbers_list)
+print("The largest number is:", largest_number)  
+
+6= write a program to find out value  using bineary search in python 
+
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        mid_val = arr[mid]
+
+        if mid_val == target:
+            return mid  # Found the target value, return its index
+        elif mid_val < target:
+            low = mid + 1  # Target is in the upper half
+        else:
+            high = mid - 1  # Target is in the lower half
+
+    return -1  # Target not found
+
+# Example usage:
+sorted_list = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
+target_value = 23
+index = binary_search(sorted_list, target_value)
+
+if index != -1:
+    print(f"The value {target_value} is found at index {index}.")
+else:
+    print(f"The value {target_value} is not present in the list."
+
+7= write a program to find out the prime number 
+
+def is_prime(number):
+    if number <= 1:
+        return False  # 1 and numbers less than 1 are not prime
+
+    # Check divisibility from 2 to the square root of the number
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            return False  # Number is divisible by i, hence not prime
+
+    return True  # If not divisible by any number, it's prime
+
+# Example usage:
+number_to_check = 17
+if is_prime(number_to_check):
+    print(f"{number_to_check} is a prime number.")
+else:
+    print(f"{number_to_check} is not a prime number.")
+
+8=write a program checking a number whether even or odd 
+
+def check_even_odd(number):
+    if number % 2 == 0:
+        return "even"
+    else:
+        return "odd"
+
+# Example usage:
+number_to_check = 7
+result = check_even_odd(number_to_check)
+print(f"{number_to_check} is {result}.")
+
+9=write a program to calculate area of triangle using heron's formula
+
+def calculate_area(a, b, c):
+    # Calculate the semi-perimeter
+    s = (a + b + c) / 2
+
+    # Calculate the area using Heron's formula
+    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5
+
+    return area
+
+# Example usage:
+side_a = 5
+side_b = 6
+side_c = 7
+
+triangle_area = calculate_area(side_a, side_b, side_c)
+print("The area of the triangle is:", triangle_area)
+ 
+10=write a program to calculate distance of  two points 
+
+def calculate_distance(x1, y1, x2, y2):
+    distance = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+    return distance
+
+# Example usage:
+x1, y1 = 2, 3  # Coordinates of the first point
+x2, y2 = 5, 7  # Coordinates of the second point
+
+distance = calculate_distance(x1, y1, x2, y2)
+print("The distance between the two points is:", distance)
+
+11=write a program to calculate all the bill amount of an item given its given its quantity , value, distance 
+
+def calculate_bill_amount(quantity, value_per_item, distance):
+    # Calculate the total cost of the items
+    total_cost = quantity * value_per_item
+    
+    # Calculate the delivery charge based on distance
+    if distance <= 5:
+        delivery_charge = 0
+    elif distance <= 10:
+        delivery_charge = 5
+    elif distance <= 20:
+        delivery_charge = 10
+    else:
+        delivery_charge = 15
+    
+    # Add delivery charge to the total cost
+    total_bill_amount = total_cost + delivery_charge
+    return total_bill_amount
+
+# Example usage:
+quantity = 10  # Quantity of the item
+value_per_item = 20  # Value of the item per unit
+distance = 8  # Distance in kilometers
+
+bill_amount = calculate_bill_amount(quantity, value_per_item, distance)
+print("Total bill amount:", bill_amount)
+ 
+12=write a program to print current date and time 
+
+import datetime
+
+def print_current_date_time():
+    current_date_time = datetime.datetime.now()
+    print("Current date and time:", current_date_time)
+
+# Call the function to print current date and time
+print_current_date_time()
+
+13= write a program to demonstrate the working with tuples 
+
+# Creating a tuple
+student = ("John", 22, "Male", "Physics")
+
+# Accessing elements of a tuple
+print("Name:", student[0])
+print("Age:", student[1])
+print("Gender:", student[2])
+print("Major:", student[3])
+
+# Iterating through a tuple
+print("\nIterating through the tuple:")
+for info in student:
+    print(info)
+
+# Tuple unpacking
+name, age, gender, major = student
+print("\nTuple unpacking:")
+print("Name:", name)
+print("Age:", age)
+print("Gender:", gender)
+print("Major:", major)
+
+# Length of a tuple
+print("\nLength of the tuple:", len(student))
+
+# Concatenating tuples
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+concatenated_tuple = tuple1 + tuple2
+print("\nConcatenated tuple:", concatenated_tuple)
+
+# Repetition of tuples
+repeated_tuple = tuple1 * 3
+print("Repeated tuple:", repeated_tuple)
+
+# Checking membership in a tuple
+print("\nChecking membership:")
+print(2 in tuple1)
+print(7 in tuple2)
+
+# Slicing a tuple
+print("\nSlicing a tuple:")
+print(concatenated_tuple[2:])
+print(repeated_tuple[:4])
+
+# Finding min and max elements in a tuple
+numbers = (3, 1, 7, 5, 9, 2)
+print("\nMinimum number:", min(numbers))
+print("Maximum number:", max(numbers))
+
+14 =write a program to demonstrate the working with disctionaris
+
+# Creating a dictionary
+student = {
+    "name": "John",
+    "age": 22,
+    "gender": "Male",
+    "major": "Physics"
+}
+
+# Accessing elements of a dictionary
+print("Name:", student["name"])
+print("Age:", student["age"])
+print("Gender:", student["gender"])
+print("Major:", student["major"])
+
+# Iterating through a dictionary
+print("\nIterating through the dictionary:")
+for key, value in student.items():
+    print(key + ":", value)
+
+# Adding new key-value pairs to a dictionary
+student["grade"] = "A"
+print("\nUpdated dictionary:", student)
+
+# Removing a key-value pair from a dictionary
+del student["age"]
+print("Dictionary after removing 'age':", student)
+
+# Length of a dictionary
+print("\nLength of the dictionary:", len(student))
+
+# Copying a dictionary
+student_copy = student.copy()
+print("Copy of the dictionary:", student_copy)
+
+# Checking membership in a dictionary
+print("\nChecking membership:")
+print("major" in student)
+print("GPA" in student)
+
+# Clearing a dictionary
+student.clear()
+print("\nCleared dictionary:", student)
+
+15=write a program to demonstarte any 2 math built in function 
+
+import math
+
+# Calculating square root using math.sqrt()
+number = 25
+square_root = math.sqrt(number)
+print("Square root of", number, "is:", square_root)
+
+# Calculating power using math.pow()
+base = 2
+exponent = 3
+power_result = math.pow(base, exponent)
+print(base, "raised to the power of", exponent, "is:", power_result)
+
+16=write a program demonstrate any 2 math built in function
+
+import math
+
+# Using math.floor() to round down a number
+num1 = 4.8
+floor_result = math.floor(num1)
+print("Floor of", num1, "is:", floor_result)
+
+# Using math.ceil() to round up a number
+num2 = 4.2
+ceil_result = math.ceil(num2)
+print("Ceiling of", num2, "is:", ceil_result)
+
+17=write a program demonstrate the use of 
+	.user define module 
+	.built in module 
+
+( user define module)= # Save this code in a file named my_module.py
+
+def greet(name):
+    return "Hello, " + name + "!"
+( built in module)=import my_module  # Importing the user-defined module
+import math  # Importing the built-in module
+
+# Using the function from the user-defined module
+name = "Alice"
+greeting = my_module.greet(name)
+print(greeting)
+
+# Using a function from the built-in module
+print("Square root of 25 is:", math.sqrt(25))
+
+18=write a program to perform following operation on dictionary 
+	1= create
+	2= acess
+	3= update
+	4=delete
+# Function to create a dictionary
+def create_dictionary():
+    dictionary = {}
+    print("Dictionary created successfully.")
+    return dictionary
+
+# Function to access an element in the dictionary
+def access_element(dictionary, key):
+    if key in dictionary:
+        print("Value for key", key, ":", dictionary[key])
+    else:
+        print("Key", key, "not found in the dictionary.")
+
+# Function to update an element in the dictionary
+def update_element(dictionary, key, value):
+    dictionary[key] = value
+    print("Updated dictionary:", dictionary)
+
+# Function to delete an element from the dictionary
+def delete_element(dictionary, key):
+    if key in dictionary:
+        del dictionary[key]
+        print("Element with key", key, "deleted successfully.")
+        print("Updated dictionary:", dictionary)
+    else:
+        print("Key", key, "not found in the dictionary.")
+
+# Main function
+def main():
+    dictionary = create_dictionary()
+
+    # Accessing element
+    access_element(dictionary, "name")
+
+    # Adding elements
+    update_element(dictionary, "name", "Alice")
+    update_element(dictionary, "age", 30)
+
+    # Accessing updated elements
+    access_element(dictionary, "name")
+    access_element(dictionary, "age")
+
+    # Deleting an element
+    delete_element(dictionary, "age")
+
+    # Accessing after deletion
+    access_element(dictionary, "age")  # Should print "Key age not found in the dictionary."
+
+if __name__ == "__main__":
+    main()
+
+19=write a program to perform following operation 
+	1=create
+	2=acess
+	3= update
+	4= delete
+
+def create_dictionary():
+    return {}  # Return an empty dictionary
+
+def access_element(dictionary, key):
+    if key in dictionary:
+        print("Value for key", key, ":", dictionary[key])
+    else:
+        print("Key", key, "not found in the dictionary.")
+
+def update_element(dictionary, key, value):
+    dictionary[key] = value
+    print("Updated dictionary:", dictionary)
+
+def delete_element(dictionary, key):
+    if key in dictionary:
+        del dictionary[key]
+        print("Element with key", key, "deleted successfully.")
+        print("Updated dictionary:", dictionary)
+    else:
+        print("Key", key, "not found in the dictionary.")
+
+# Main function
+def main():
+    my_dict = None
+
+    while True:
+        print("\nMenu:")
+        print("1. Create a dictionary")
+        print("2. Access an element")
+        print("3. Update an element")
+        print("4. Delete an element")
+        print("5. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            my_dict = create_dictionary()
+        elif choice == "2":
+            if my_dict:
+                key = input("Enter key to access: ")
+                access_element(my_dict, key)
+            else:
+                print("Dictionary not created yet.")
+        elif choice == "3":
+            if my_dict:
+                key = input("Enter key to update: ")
+                value = input("Enter new value: ")
+                update_element(my_dict, key, value)
+            else:
+                print("Dictionary not created yet.")
+        elif choice == "4":
+            if my_dict:
+                key = input("Enter key to delete: ")
+                delete_element(my_dict, key)
+            else:
+                print("Dictionary not created yet.")
+        elif choice == "5":
+            print("Exiting program...")
+            break
+        else:
+            print("Invalid choice. Please enter a number from 1 to 5.")
+
+if __name__ == "__main__":
+    main()
+ 
+20=write a program to demonstrate different number of data type
+
+# Integer
+num_int = 10
+
+# Float
+num_float = 3.14
+
+# String
+str_var = "Hello, world!"
+
+# Boolean
+bool_var = True
+
+# List
+list_var = [1, 2, 3, 4, 5]
+
+# Tuple
+tuple_var = (1, 2, 3, 4, 5)
+
+# Dictionary
+dict_var = {'a': 1, 'b': 2, 'c': 3}
+
+# Set
+set_var = {1, 2, 3, 4, 5}
+
+# NoneType
+none_var = None
+
+# Printing the data types
+print("Data types:")
+print("Integer:", num_int)
+print("Float:", num_float)
+print("String:", str_var)
+print("Boolean:", bool_var)
+print("List:", list_var)
+print("Tuple:", tuple_var)
+print("Dictionary:", dict_var)
+print("Set:", set_var)
+print("NoneType:", none_var)
+
+21=write a program to perform various arthemetic operations on numbers in python
+
+def add(x, y):
+    """Function to add two numbers"""
+    return x + y
+
+def subtract(x, y):
+    """Function to subtract two numbers"""
+    return x - y
+
+def multiply(x, y):
+    """Function to multiply two numbers"""
+    return x * y
+
+def divide(x, y):
+    """Function to divide two numbers"""
+    if y == 0:
+        return "Cannot divide by zero!"
+    else:
+        return x / y
+
+def main():
+    print("Select operation:")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+
+    choice = input("Enter choice (1/2/3/4): ")
+
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+
+    if choice == '1':
+        print("Result:", add(num1, num2))
+    elif choice == '2':
+        print("Result:", subtract(num1, num2))
+    elif choice == '3':
+        print("Result:", multiply(num1, num2))
+    elif choice == '4':
+        print("Result:", divide(num1, num2))
+    else:
+        print("Invalid input")
+
+if __name__ == "__main__":
+    main()
+
+22=write a program to define a module to find fibonnaci number in python 
+
+def fibonacci(n):
+    """Function to find the nth Fibonacci number"""
+    if n <= 0:
+        return "Invalid input. Please enter a positive integer."
+    elif n == 1:
+        return 0
+    elif n == 2:
+        return 1
+    else:
+        fib_sequence = [0, 1]
+        for i in range(2, n):
+            fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+        return fib_sequence[-1]
+
+def print_fibonacci_sequence(count):
+    """Function to print the Fibonacci sequence up to the given count"""
+    if count <= 0:
+        print("Invalid input. Please enter a positive integer.")
+    else:
+        fib_sequence = [0, 1]
+        if count == 1:
+            print(fib_sequence[0])
+        elif count == 2:
+            print(fib_sequence[0], fib_sequence[1])
+        else:
+            print(fib_sequence[0], fib_sequence[1], end=" ")
+            for _ in range(2, count):
+                next_fib = fib_sequence[-1] + fib_sequence[-2]
+                fib_sequence.append(next_fib)
+                print(next_fib, end=" ")
+        print()
+
+if __name__ == "__main__":
+    # Test the module
+    n = int(input("Enter the value of n to find the nth Fibonacci number: "))
+    print("Fibonacci number at position", n, ":", fibonacci(n))
+
+    count = int(input("Enter the count to print Fibonacci sequence: "))
+    print("Fibonacci sequence up to count", count, ":")
+    print_fibonacci_sequence(count)
+
+23=write a program to create , concentrate and  print the string 
+
+def create_string():
+    """Function to create a string"""
+    return "Hello, "
+
+def concatenate_strings(string1, string2):
+    """Function to concatenate two strings"""
+    return string1 + string2
+
+def main():
+    # Create a string
+    string1 = create_string()
+    
+    # Concatenate strings
+    string2 = "world!"
+
+    # Print the concatenated string
+    print(concatenate_strings(string1, string2))
+
+if __name__ == "__main__":
+    main()
+
+24=write a program to define a module a specific function in three module to another program in python
+
+# main.py
+from math_operations import add
+
+def main():
+    # Using the add function from math_operations module
+    result = add(5, 3)
+    print("Result of addition:", result)
+
+if __name__ == "__main__":
+    main()
+
+25=write a program to print prime number less than 10 in the python
+
+def is_prime(num):
+    """Function to check if a number is prime"""
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def print_primes_less_than_10():
+    """Function to print prime numbers less than 10"""
+    print("Prime numbers less than 10:")
+    for num in range(2, 10):
+        if is_prime(num):
+            print(num)
+
+if __name__ == "__main__":
+    print_primes_less_than_10()
+
+26=write to program find factorial of a no using recurssion in the python
+
+def factorial(n):
+    """Function to find the factorial of a number using recursion"""
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+def main():
+    num = int(input("Enter a number to find its factorial: "))
+    if num < 0:
+        print("Factorial is not defined for negative numbers.")
+    else:
+        print("Factorial of", num, "is:", factorial(num))
+
+if __name__ == "__main__":
+    main()
+
+27=write a program demonstrate math built in function in python 
+
+import math
+
+def main():
+    # Finding the square root of a number
+    num = 16
+    print("Square root of", num, "is:", math.sqrt(num))
+
+    # Finding the absolute value of a number
+    num = -5
+    print("Absolute value of", num, "is:", math.fabs(num))
+
+    # Rounding a floating-point number to the nearest integer
+    num = 4.6
+    print("Rounding", num, "to the nearest integer:", round(num))
+
+    # Finding the factorial of a number
+    num = 5
+    print("Factorial of", num, "is:", math.factorial(num))
+
+    # Finding the ceiling value of a number
+    num = 3.7
+    print("Ceiling value of", num, "is:", math.ceil(num))
+
+    # Finding the floor value of a number
+    num = 3.7
+    print("Floor value of", num, "is:", math.floor(num))
+
+    # Finding the value of pi
+    print("Value of pi is:", math.pi)
+
+    # Finding the value of e (Euler's number)
+    print("Value of e (Euler's number) is:", math.e)
+
+    # Trigonometric functions
+    angle = 45
+    print("Sine of", angle, "degrees is:", math.sin(math.radians(angle)))
+    print("Cosine of", angle, "degrees is:", math.cos(math.radians(angle)))
+    print("Tangent of", angle, "degrees is:", math.tan(math.radians(angle)))
+
+if __name__ == "__main__":
+    main()
+ 
+28=write a program demonstrate string built in function in python 
+
+def main():
+    # String length
+    s = "Hello, world!"
+    print("Length of the string:", len(s))
+
+    # Converting to lowercase
+    s_lower = s.lower()
+    print("Lowercase string:", s_lower)
+
+    # Converting to uppercase
+    s_upper = s.upper()
+    print("Uppercase string:", s_upper)
+
+    # Capitalizing the first letter
+    s_capitalize = s.capitalize()
+    print("Capitalized string:", s_capitalize)
+
+    # Checking if the string starts with a certain substring
+    print("Does the string start with 'Hello'?", s.startswith("Hello"))
+
+    # Checking if the string ends with a certain substring
+    print("Does the string end with 'world!'?", s.endswith("world!"))
+
+    # Finding the index of a substring
+    print("Index of 'world' in the string:", s.find("world"))
+
+    # Counting occurrences of a substring
+    print("Occurrences of 'o' in the string:", s.count("o"))
+
+    # Replacing substrings
+    s_replaced = s.replace("world", "Python")
+    print("String with 'world' replaced by 'Python':", s_replaced)
+
+    # Splitting the string into a list of substrings
+    s_split = s.split(", ")
+    print("String split by comma:", s_split)
+
+    # Joining a list of strings into a single string
+    s_joined = ", ".join(["Hello", "world", "!"])
+    print("Strings joined with comma:", s_joined)
+
+if __name__ == "__main__":
+    main()
+
+29=write a program to convert temprature to farenhite 
+
+def celsius_to_fahrenheit(celsius):
+    """Function to convert temperature from Celsius to Fahrenheit"""
+    return (celsius * 9/5) + 32
+
+def main():
+    celsius = float(input("Enter temperature in Celsius: "))
+    fahrenheit = celsius_to_fahrenheit(celsius)
+    print("Temperature in Fahrenheit:", fahrenheit)
+
+if __name__ == "__main__":
+    main()
+
+30 =write a program to convert intenger into floating value 
+
+def main():
+    # Integer value
+    integer_value = 10
+
+    # Convert integer to floating-point value
+    float_value = float(integer_value)
+
+    print("Integer value:", integer_value)
+    print("Floating-point value:", float_value)
+
+if __name__ == "__main__":
+    main()
+
+31= write a program to convert class to implement paw (x,n)
+
+class Power:
+    def __init__(self, base):
+        self.base = base
+
+    def raise_to_power(self, exponent):
+        return self.base ** exponent
+
+def main():
+    x = float(input("Enter the base (x): "))
+    n = int(input("Enter the exponent (n): "))
+
+    power_instance = Power(x)
+    result = power_instance.raise_to_power(n)
+
+    print(f"{x} raised to the power of {n} is {result}")
+
+if __name__ == "__main__":
+    main()
+
+32=write a program using for loop 
+
+def main():
+    # Printing numbers from 1 to 5 using a for loop
+    print("Numbers from 1 to 5:")
+    for i in range(1, 6):
+        print(i)
+
+    # Printing even numbers from 2 to 10 using a for loop
+    print("\nEven numbers from 2 to 10:")
+    for num in range(2, 11, 2):
+        print(num)
+
+    # Summing numbers from 1 to 10 using a for loop
+    total = 0
+    for i in range(1, 11):
+        total += i
+    print("\nSum of numbers from 1 to 10:", total)
+
+if __name__ == "__main__":
+    main()
+
+33=write a program using while loop 
+
+def main():
+    # Initialize a counter
+    i = 1
+
+    # Using a while loop to print numbers from 1 to 5
+    print("Numbers from 1 to 5:")
+    while i <= 5:
+        print(i)
+        i += 1
+
+if __name__ == "__main__":
+    main()
+
+34= write a program input text file and print all unique word in the file 
+
+def main():
+    # Prompting user for the file name
+    file_name = input("Enter the name of the text file: ")
+
+    # Open the file for reading
+    try:
+        with open(file_name, 'r') as file:
+            # Read the content of the file
+            content = file.read()
+
+            # Split the content into words
+            words = content.split()
+
+            # Using a set to store unique words
+            unique_words = set(words)
+
+            # Printing unique words
+            print("Unique words in the file:")
+            for word in sorted(unique_words):
+                print(word)
+    except FileNotFoundError:
+        print("File not found!")
+
+if __name__ == "__main__":
+    main()
+
+35=write a program to handel user define exception
+
+# Define a custom exception class
+class MyCustomException(Exception):
+    def __init__(self, message="This is a custom exception"):
+        self.message = message
+        super().__init__(self.message)
+
+def main():
+    try:
+        # Raise the custom exception
+        raise MyCustomException("This is a custom exception message")
+    except MyCustomException as e:
+        # Handle the custom exception
+        print("Custom exception occurred:", e.message)
+
+if __name__ == "__main__":
+    main()
+ 
+36 = write a program to demonstrate the following operations 
+	1=simple inheritance 
+	2=multiple inheritance 
+
+# Simple inheritance
+class Animal:
+    def __init__(self, species):
+        self.species = species
+
+    def sound(self):
+        pass
+
+class Dog(Animal):
+    def sound(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def sound(self):
+        return "Meow!"
+
+# Multiple inheritance
+class A:
+    def method_A(self):
+        return "Method A"
+
+class B:
+    def method_B(self):
+        return "Method B"
+
+class C(A, B):
+    pass
+
+def main():
+    # Simple inheritance
+    dog = Dog("Canine")
+    cat = Cat("Feline")
+
+    print("Simple Inheritance:")
+    print("Dog species:", dog.species, "- Sound:", dog.sound())
+    print("Cat species:", cat.species, "- Sound:", cat.sound())
+
+    # Multiple inheritance
+    c_instance = C()
+
+    print("\nMultiple Inheritance:")
+    print(c_instance.method_A())
+    print(c_instance.method_B())
+
+if __name__ == "__main__":
+    main()
+
+
